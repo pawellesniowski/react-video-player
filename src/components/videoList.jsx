@@ -3,9 +3,15 @@ import React from 'react';
 import { VideoListItem } from './videoListItem';
 
 
-export const VideoList = (props) => {
+export const VideoList = ({videos, onSelectedVideo}) => {
 
-    const videoItems = props.videos.map((video)=><VideoListItem video={video} key={video.id.videoId}/> );
+    const videoItems = videos.map((video)=><
+        VideoListItem
+            video={video}
+            key={video.id.videoId}
+            onSelectedVideo={onSelectedVideo}
+        /> );
+
 
     return(
         <ul className={'video-list'}>
